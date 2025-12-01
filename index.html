@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SVG Map Animation</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/MotionPathPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/DrawSVGPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+  </head>
+
+  <body class="w-full min-h-screen flex flex-col items-center justify-center">
+    <main class="flex flex-col items-center font-serif w-full">
+      <img src="/hero-img.jpg" class="object-cover w-full h-[60vh]" />
+
+      <div class="max-w-3xl mt-16">
+        <h1 class="text-4xl font-serif">
+          Rerouting the US: Reimagining a country for high-speed trains
+        </h1>
+        <h2 class="mt-8 text-center text-neutral-500">
+          By Eleanor Stubbs, Alex Leeds Matthews, Curt Merrill, Agne Jurkenaite
+          and Alexandra Skores, CNN Published November 22, 2025
+        </h2>
+      </div>
+    </main>
+
+    <div class="relative w-[800px] h-[120vh]">
+      <svg
+        id="map"
+        width="800"
+        height="120vh"
+        class="overflow-visible absolute top-0 left-0"
+      >
+        <!-- Path A -->
+        <path
+          id="path02a"
+          d="M100 80
+       L100 250
+       L300 250
+       L300 500
+       L450 500
+       L450 750"
+          fill="none"
+          stroke-width="4"
+        />
+
+        <!-- Path B -->
+        <path
+          id="path02b"
+          d="M200 80
+       L200 300
+       L350 300
+       L350 550
+       L450 550
+       L450 750"
+          fill="none"
+          stroke-width="4"
+        />
+
+        <!-- Path C -->
+        <path
+          id="path02c"
+          d="M300 80
+       L300 220
+       L250 220
+       L250 500
+       L450 500
+       L450 750"
+          fill="none"
+          stroke-width="4"
+        />
+
+        <!-- Path D -->
+        <path
+          id="path02d"
+          d="M400 80
+       L400 260
+       L500 260
+       L500 520
+       L450 520
+       L450 750"
+          fill="none"
+          stroke-width="4"
+        />
+
+        <!-- Path E -->
+        <path
+          id="path02e"
+          d="M500 80
+       L500 240
+       L420 240
+       L420 520
+       L450 520
+       L450 750"
+          fill="none"
+          stroke-width="4"
+        />
+
+        <!-- Path F -->
+        <path
+          id="path02f"
+          d="M600 80
+       L600 300
+       L450 300
+       L450 600
+       L450 750"
+          fill="none"
+          stroke-width="4"
+        />
+
+        <!-- Path G -->
+        <path
+          id="path02g"
+          d="M700 80
+       L700 260
+       L550 260
+       L550 600
+       L450 600
+       L450 750"
+          fill="none"
+          stroke-width="4"
+        />
+
+        <g id="point" class="invisible">
+          <image
+            href="/icon-train.png"
+            width="50"
+            height="50"
+            x="-20"
+            y="-20"
+          />
+        </g>
+      </svg>
+
+      <div id="stops" class="absolute top-0 left-0">
+        <div
+          class="stop absolute px-3 py-2 rounded-xl font-semibold cursor-pointer"
+          data-path="path02a"
+          style="
+            left: 60px;
+            top: 40px;
+            border: 2px solid #e63946;
+            color: #e63946;
+            background: white;
+          "
+        >
+          San Francisco
+        </div>
+
+        <div
+          class="stop absolute px-3 py-2 rounded-xl font-semibold cursor-pointer"
+          data-path="path02b"
+          style="
+            left: 160px;
+            top: 40px;
+            border: 2px solid #1d3557;
+            color: #1d3557;
+            background: white;
+          "
+        >
+          Los Angeles
+        </div>
+
+        <div
+          class="stop absolute px-3 py-2 rounded-xl font-semibold cursor-pointer"
+          data-path="path02c"
+          style="
+            left: 260px;
+            top: 40px;
+            border: 2px solid #2a9d8f;
+            color: #2a9d8f;
+            background: white;
+          "
+        >
+          San Diego
+        </div>
+
+        <div
+          class="stop absolute px-3 py-2 rounded-xl font-semibold cursor-pointer"
+          data-path="path02d"
+          style="
+            left: 360px;
+            top: 40px;
+            border: 2px solid #f4a261;
+            color: #f4a261;
+            background: white;
+          "
+        >
+          New York
+        </div>
+
+        <div
+          class="stop absolute px-3 py-2 rounded-xl font-semibold cursor-pointer"
+          data-path="path02e"
+          style="
+            left: 460px;
+            top: 40px;
+            border: 2px solid #e76f51;
+            color: #e76f51;
+            background: white;
+          "
+        >
+          Boston
+        </div>
+
+        <div
+          class="stop absolute px-3 py-2 rounded-xl font-semibold cursor-pointer"
+          data-path="path02f"
+          style="
+            left: 560px;
+            top: 40px;
+            border: 2px solid #457b9d;
+            color: #457b9d;
+            background: white;
+          "
+        >
+          Miami
+        </div>
+
+        <div
+          class="stop absolute px-3 py-2 rounded-xl font-semibold cursor-pointer"
+          data-path="path02g"
+          style="
+            left: 660px;
+            top: 40px;
+            border: 2px solid #6a994e;
+            color: #6a994e;
+            background: white;
+          "
+        >
+          Seattle
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-3xl mt-12 text-center">
+      <h1 id="dynamic-title" class="text-4xl font-serif">
+        Rerouting the US: Reimagining a country for high-speed trains
+      </h1>
+
+      <h2 id="dynamic-subtitle" class="mt-8 text-neutral-500">
+        By Eleanor Stubbs, Alex Leeds Matthews, Curt Merrill, Agne Jurkenaite
+        and Alexandra Skores, CNN — Published November 22, 2025
+      </h2>
+    </div>
+
+    // Map 2
+    <!-- MAP 2 -->
+    <div class="relative w-[800px] h-[120vh] mt-20">
+     <svg
+  id="map2"
+  width="800"
+  height="120vh"
+  class="overflow-visible absolute top-0 left-0"
+>
+  <path
+    id="path02a_2"
+    d="M100 80
+       L100 250
+       L300 250
+       L300 500
+       L450 500
+       L450 750"
+    fill="none"
+    stroke-width="4"
+  />
+
+  <path
+    id="path02b_2"
+    d="M200 80
+       L200 300
+       L350 300
+       L350 550
+       L450 550
+       L450 750"
+    fill="none"
+    stroke-width="4"
+  />
+
+  <path
+    id="path02c_2"
+    d="M300 80
+       L300 220
+       L250 220
+       L250 500
+       L450 500
+       L450 750"
+    fill="none"
+    stroke-width="4"
+  />
+
+  <path
+    id="path02d_2"
+    d="M400 80
+       L400 260
+       L500 260
+       L500 520
+       L450 520
+       L450 750"
+    fill="none"
+    stroke-width="4"
+  />
+
+  <path
+    id="path02e_2"
+    d="M500 80
+       L500 240
+       L420 240
+       L420 520
+       L450 520
+       L450 750"
+    fill="none"
+    stroke-width="4"
+  />
+
+  <path
+    id="path02f_2"
+    d="M600 80
+       L600 300
+       L450 300
+       L450 600
+       L450 750"
+    fill="none"
+    stroke-width="4"
+  />
+
+  <path
+    id="path02g_2"
+    d="M700 80
+       L700 260
+       L550 260
+       L550 600
+       L450 600
+       L450 750"
+    fill="none"
+    stroke-width="4"
+  />
+
+  <g id="point2" class="invisible">
+    <image
+      href="/icon-train.png"
+      width="50"
+      height="50"
+      x="-20"
+      y="-20"
+    />
+  </g>
+</svg>
+
+
+      <!-- STOPS FOR MAP 2 -->
+      <div id="stops2" class="absolute top-0 left-0">
+        <div
+          class="stop2 absolute px-3 py-2 rounded-xl font-semibold cursor-pointer"
+          data-path2="path02a_2"
+          style="
+            left: 60px;
+            top: 40px;
+            border: 2px solid #e63946;
+            color: #e63946;
+          "
+        >
+          San Francisco
+        </div>
+
+        <div
+          class="stop2 absolute px-3 py-2 rounded-xl font-semibold cursor-pointer"
+          data-path2="path02b_2"
+          style="
+            left: 160px;
+            top: 40px;
+            border: 2px solid #1d3557;
+            color: #1d3557;
+          "
+        >
+          Los Angeles
+        </div>
+
+        <div
+          class="stop2 absolute px-3 py-2 rounded-xl font-semibold cursor-pointer"
+          data-path2="path02c_2"
+          style="
+            left: 260px;
+            top: 40px;
+            border: 2px solid #2a9d8f;
+            color: #2a9d8f;
+          "
+        >
+          San Diego
+        </div>
+
+        <div
+          class="stop2 absolute px-3 py-2 rounded-xl font-semibold cursor-pointer"
+          data-path2="path02d_2"
+          style="
+            left: 360px;
+            top: 40px;
+            border: 2px solid #f4a261;
+            color: #f4a261;
+          "
+        >
+          New York
+        </div>
+
+        <div
+          class="stop2 absolute px-3 py-2 rounded-xl font-semibold cursor-pointer"
+          data-path2="path02e_2"
+          style="
+            left: 460px;
+            top: 40px;
+            border: 2px solid #e76f51;
+            color: #e76f51;
+          "
+        >
+          Boston
+        </div>
+
+        <div
+          class="stop2 absolute px-3 py-2 rounded-xl font-semibold cursor-pointer"
+          data-path2="path02f_2"
+          style="
+            left: 560px;
+            top: 40px;
+            border: 2px solid #457b9d;
+            color: #457b9d;
+          "
+        >
+          Miami
+        </div>
+
+        <div
+          class="stop2 absolute px-3 py-2 rounded-xl font-semibold cursor-pointer"
+          data-path2="path02g_2"
+          style="
+            left: 660px;
+            top: 40px;
+            border: 2px solid #6a994e;
+            color: #6a994e;
+          "
+        >
+          Seattle
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-3xl mt-12 text-center">
+      <h1 id="dynamic-title-2" class="text-4xl font-serif">
+        Map 2 default title
+      </h1>
+
+      <h2 id="dynamic-subtitle-2" class="mt-8 text-neutral-500">
+        Map 2 default subtitle
+      </h2>
+    </div>
+
+    <!-- MAP 3 -->
+    <div class="relative w-[800px] h-[120vh] mt-20">
+     <svg
+  id="map3"
+  width="800"
+  height="120vh"
+  class="overflow-visible absolute top-0 left-0"
+>
+  <path
+    id="path02a_3"
+    d="M100 80
+       L100 250
+       L300 250
+       L300 500
+       L450 500
+       L450 750"
+    fill="none"
+    stroke-width="4"
+  />
+
+  <path
+    id="path02b_3"
+    d="M200 80
+       L200 300
+       L350 300
+       L350 550
+       L450 550
+       L450 750"
+    fill="none"
+    stroke-width="4"
+  />
+
+  <path
+    id="path02c_3"
+    d="M300 80
+       L300 220
+       L250 220
+       L250 500
+       L450 500
+       L450 750"
+    fill="none"
+    stroke-width="4"
+  />
+
+  <path
+    id="path02d_3"
+    d="M400 80
+       L400 260
+       L500 260
+       L500 520
+       L450 520
+       L450 750"
+    fill="none"
+    stroke-width="4"
+  />
+
+  <path
+    id="path02e_3"
+    d="M500 80
+       L500 240
+       L420 240
+       L420 520
+       L450 520
+       L450 750"
+    fill="none"
+    stroke-width="4"
+  />
+
+  <path
+    id="path02f_3"
+    d="M600 80
+       L600 300
+       L450 300
+       L450 600
+       L450 750"
+    fill="none"
+    stroke-width="4"
+  />
+
+  <path
+    id="path02g_3"
+    d="M700 80
+       L700 260
+       L550 260
+       L550 600
+       L450 600
+       L450 750"
+    fill="none"
+    stroke-width="4"
+  />
+
+  <g id="point3" class="invisible">
+    <image
+      href="/icon-train.png"
+      width="50"
+      height="50"
+      x="-20"
+      y="-20"
+    />
+  </g>
+</svg>
+
+
+      <!-- STOPS FOR MAP 3 -->
+      <div id="stops3" class="absolute top-0 left-0">
+        <div
+          class="stop3 absolute px-3 py-2 rounded-xl font-semibold cursor-pointer"
+          data-path3="path02a_3"
+          style="
+            left: 60px;
+            top: 40px;
+            border: 2px solid #e63946;
+            color: #e63946;
+          "
+        >
+          San Francisco
+        </div>
+        <div
+          class="stop3 absolute px-3 py-2 rounded-xl font-semibold cursor-pointer"
+          data-path3="path02b_3"
+          style="
+            left: 160px;
+            top: 40px;
+            border: 2px solid #1d3557;
+            color: #1d3557;
+          "
+        >
+          Los Angeles
+        </div>
+        <div
+          class="stop3 absolute px-3 py-2 rounded-xl font-semibold cursor-pointer"
+          data-path3="path02c_3"
+          style="
+            left: 260px;
+            top: 40px;
+            border: 2px solid #2a9d8f;
+            color: #2a9d8f;
+          "
+        >
+          San Diego
+        </div>
+        <div
+          class="stop3 absolute px-3 py-2 rounded-xl font-semibold cursor-pointer"
+          data-path3="path02d_3"
+          style="
+            left: 360px;
+            top: 40px;
+            border: 2px solid #f4a261;
+            color: #f4a261;
+          "
+        >
+          New York
+        </div>
+        <div
+          class="stop3 absolute px-3 py-2 rounded-xl font-semibold cursor-pointer"
+          data-path3="path02e_3"
+          style="
+            left: 460px;
+            top: 40px;
+            border: 2px solid #e76f51;
+            color: #e76f51;
+          "
+        >
+          Boston
+        </div>
+        <div
+          class="stop3 absolute px-3 py-2 rounded-xl font-semibold cursor-pointer"
+          data-path3="path02f_3"
+          style="
+            left: 560px;
+            top: 40px;
+            border: 2px solid #457b9d;
+            color: #457b9d;
+          "
+        >
+          Miami
+        </div>
+        <div
+          class="stop3 absolute px-3 py-2 rounded-xl font-semibold cursor-pointer"
+          data-path3="path02g_3"
+          style="
+            left: 660px;
+            top: 40px;
+            border: 2px solid #6a994e;
+            color: #6a994e;
+          "
+        >
+          Seattle
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-3xl mt-12 text-center">
+      <h1 id="dynamic-title-3" class="text-4xl font-serif">
+        Map 3 default title
+      </h1>
+      <h2 id="dynamic-subtitle-3" class="mt-8 text-neutral-500">
+        Map 3 default subtitle
+      </h2>
+    </div>
+
+    <!-- MAP 4 -->
+    <div class="relative w-[800px] h-[120vh] mt-20">
+    <svg
+  id="map4"
+  width="800"
+  height="120vh"
+  class="overflow-visible absolute top-0 left-0"
+>
+  <path
+    id="path02a_4"
+    d="M100 80
+       L100 250
+       L300 250
+       L300 500
+       L450 500
+       L450 750"
+    fill="none"
+    stroke-width="4"
+  />
+
+  <path
+    id="path02b_4"
+    d="M200 80
+       L200 300
+       L350 300
+       L350 550
+       L450 550
+       L450 750"
+    fill="none"
+    stroke-width="4"
+  />
+
+  <path
+    id="path02c_4"
+    d="M300 80
+       L300 220
+       L250 220
+       L250 500
+       L450 500
+       L450 750"
+    fill="none"
+    stroke-width="4"
+  />
+
+  <path
+    id="path02d_4"
+    d="M400 80
+       L400 260
+       L500 260
+       L500 520
+       L450 520
+       L450 750"
+    fill="none"
+    stroke-width="4"
+  />
+
+  <path
+    id="path02e_4"
+    d="M500 80
+       L500 240
+       L420 240
+       L420 520
+       L450 520
+       L450 750"
+    fill="none"
+    stroke-width="4"
+  />
+
+  <path
+    id="path02f_4"
+    d="M600 80
+       L600 300
+       L450 300
+       L450 600
+       L450 750"
+    fill="none"
+    stroke-width="4"
+  />
+
+  <path
+    id="path02g_4"
+    d="M700 80
+       L700 260
+       L550 260
+       L550 600
+       L450 600
+       L450 750"
+    fill="none"
+    stroke-width="4"
+  />
+
+  <g id="point4" class="invisible">
+    <image
+      href="/icon-train.png"
+      width="50"
+      height="50"
+      x="-20"
+      y="-20"
+    />
+  </g>
+</svg>
+
+
+      <div id="stops4" class="absolute top-0 left-0">
+        <div
+          class="stop4 absolute px-3 py-2 rounded-xl font-semibold cursor-pointer"
+          data-path4="path02a_4"
+          style="
+            left: 60px;
+            top: 40px;
+            border: 2px solid #e63946;
+            color: #e63946;
+          "
+        >
+          San Francisco
+        </div>
+        <div
+          class="stop4 absolute px-3 py-2 rounded-xl font-semibold cursor-pointer"
+          data-path4="path02b_4"
+          style="
+            left: 160px;
+            top: 40px;
+            border: 2px solid #1d3557;
+            color: #1d3557;
+          "
+        >
+          Los Angeles
+        </div>
+        <div
+          class="stop4 absolute px-3 py-2 rounded-xl font-semibold cursor-pointer"
+          data-path4="path02c_4"
+          style="
+            left: 260px;
+            top: 40px;
+            border: 2px solid #2a9d8f;
+            color: #2a9d8f;
+          "
+        >
+          San Diego
+        </div>
+        <div
+          class="stop4 absolute px-3 py-2 rounded-xl font-semibold cursor-pointer"
+          data-path4="path02d_4"
+          style="
+            left: 360px;
+            top: 40px;
+            border: 2px solid #f4a261;
+            color: #f4a261;
+          "
+        >
+          New York
+        </div>
+        <div
+          class="stop4 absolute px-3 py-2 rounded-xl font-semibold cursor-pointer"
+          data-path4="path02e_4"
+          style="
+            left: 460px;
+            top: 40px;
+            border: 2px solid #e76f51;
+            color: #e76f51;
+          "
+        >
+          Boston
+        </div>
+        <div
+          class="stop4 absolute px-3 py-2 rounded-xl font-semibold cursor-pointer"
+          data-path4="path02f_4"
+          style="
+            left: 560px;
+            top: 40px;
+            border: 2px solid #457b9d;
+            color: #457b9d;
+          "
+        >
+          Miami
+        </div>
+        <div
+          class="stop4 absolute px-3 py-2 rounded-xl font-semibold cursor-pointer"
+          data-path4="path02g_4"
+          style="
+            left: 660px;
+            top: 40px;
+            border: 2px solid #6a994e;
+            color: #6a994e;
+          "
+        >
+          Seattle
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-3xl mt-12 text-center">
+      <h1 id="dynamic-title-4" class="text-4xl font-serif">
+        Map 4 default title
+      </h1>
+      <h2 id="dynamic-subtitle-4" class="mt-8 text-neutral-500">
+        Map 4 default subtitle
+      </h2>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/DrawSVGPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/MotionPathPlugin.min.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
