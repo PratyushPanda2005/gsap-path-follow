@@ -1,44 +1,118 @@
 gsap.registerPlugin(ScrollToPlugin, MotionPathPlugin, DrawSVGPlugin);
 
 
+// const content = {
+//   path02a: {
+//     title: "Panel 1 – The Big Idea",
+//     subtitle: "Reimagine B2B commerce for Manufacturers and Distributors",
+//      list: [
+//       "Most B2B companies still sell with email, spreadsheets, and portals that feel like they’re stuck in 2005. eComchain turns your ERP-powered business into a modern B2B2C commerce experience – where manufacturers, distributors, and end consumers all connect on a single, cloud-based storefront.",
+//       "Instead of stitching together custom code, you launch on a SaaS platform that already knows how B2B works: complex pricing, contracts, approvals, credit limits, purchase orders, and account-based ordering – all out of the box.",
+//       "“From first login to first order, eComchain is built around how real industrial buyers actually buy.”"
+//     ]
+//   },
+//   path02b: {
+//     title: "Panel 2 – The eComchain Approach",
+//     subtitle: "A B2B2C platform layered on top of your ERP",
+//      list: [
+//       "eComchain doesn’t ask you to rip and replace. It leverages your existing ERP investment and wraps it with a modern, AI-assisted commerce layer. The platform is designed to integrate with major ERPs such as Oracle, SAP, JD Edwards, Microsoft Dynamics and others, so product, pricing, inventory and orders stay in sync. (eComchain)",
+//       "San Francisco point 02 text here...",
+//       "San Francisco point 03 text here..."
+//     ]
+//   },
+//   path02c: {
+//     title: "San Diego's High-Speed Future",
+//     subtitle: "",
+//      list: [
+//       "San Francisco point 01 text here...",
+//       "San Francisco point 02 text here...",
+//       "San Francisco point 03 text here..."
+//     ]
+//   },
+//   path02d: {
+//     title: "High-Speed Vision for New York",
+//     subtitle: "",
+//      list: [
+//       "San Francisco point 01 text here...",
+//       "San Francisco point 02 text here...",
+//       "San Francisco point 03 text here..."
+//     ]
+//   },
+//   path02e: {
+//     title: "Boston's Rail Revolution",
+//      list: [
+//       "San Francisco point 01 text here...",
+//       "San Francisco point 02 text here...",
+//       "San Francisco point 03 text here..."
+//     ]
+//   },
+//   path02f: {
+//     title: "Miami's High-Speed Transformation",
+//     list: [
+//       "Miami point 01 text here...",
+//       "Miami point 02 text here...",
+//       "Miami point 03 text here..."
+//     ]
+//   },
+//   path02g: {
+//     title: "Seattle's High-Speed Connectivity",
+//      list: [
+//       "San Francisco point 01 text here...",
+//       "San Francisco point 02 text here...",
+//       "San Francisco point 03 text here..."
+//     ]
+//   },
+// };
+
+
 const content = {
   path02a: {
-    title: "Reimagining High-Speed Rail in San Francisco",
-    subtitle: "By Eleanor Stubbs — Updated for San Francisco",
+    title: "Panel 1 – The Big Idea",
+    subtitle: "Reimagine B2B commerce for Manufacturers and Distributors",
+    list: [
+      {
+        main: "Most B2B companies still sell with email, spreadsheets, and portals that feel like they’re stuck in 2005. eComchain turns your ERP-powered business into a modern B2B2C commerce experience – where manufacturers, distributors, and end consumers all connect on a single, cloud-based storefront.",
+        bullets: []
+      },
+      {
+        main: "Instead of stitching together custom code, you launch on a SaaS platform that already knows how B2B works: complex pricing, contracts, approvals, credit limits, purchase orders, and account-based ordering – all out of the box.",
+        bullets: []
+      },
+      {
+        main: "“From first login to first order, eComchain is built around how real industrial buyers actually buy.”",
+        bullets: []
+      }
+    ]
   },
   path02b: {
-    title: "Connecting Los Angeles with High-Speed Trains",
-    subtitle: "By Curt Merrill — Updated for Los Angeles",
-  },
-  path02c: {
-    title: "San Diego's High-Speed Future",
-    subtitle: "By Alexandra Skores — Updated for San Diego",
-  },
-  path02d: {
-    title: "High-Speed Vision for New York",
-    subtitle: "By CNN Staff — Updated for New York",
-  },
-  path02e: {
-    title: "Boston's Rail Revolution",
-    subtitle: "By Alex Leeds Matthews — Updated for Boston",
-  },
-  path02f: {
-    title: "Miami's High-Speed Transformation",
-    subtitle: "By Agne Jurkenaite — Updated for Miami",
-  },
-  path02g: {
-    title: "Seattle's High-Speed Connectivity",
-    subtitle: "By Eleanor Stubbs — Updated for Seattle",
+    title: "Panel 2 – The eComchain Approach",
+    subtitle: "A B2B2C platform layered on top of your ERP",
+    list: [
+      {
+        main: "eComchain doesn’t ask you to rip and replace. It leverages your existing ERP investment and wraps it with a modern, AI-assisted commerce layer. The platform is designed to integrate with major ERPs such as Oracle, SAP, JD Edwards, Microsoft Dynamics and others, so product, pricing, inventory and orders stay in sync. (eComchain)",
+        bullets: []
+      },
+      {
+        main: "On top of those business processes, eComchain adds:",
+        bullets: [
+          "Account-based storefronts for each customer or distributor",
+          "Contract & volume pricing that flow directly from your ERP",
+          "Purchase order & punchout support for procurement teams",
+          "Multi-vendor marketplace options, so you can onboard suppliers and expand your catalog without new custom builds (eComchain)"
+        ]
+      },
+    ]
   },
 };
 
 
 const titleEl = document.getElementById("dynamic-title");
 const subtitleEl = document.getElementById("dynamic-subtitle");
+const listEl = document.getElementById("dynamic-list");
 
 
 window.addEventListener("DOMContentLoaded", () => {
-      const stops = gsap.utils.toArray("#stops .stop");
+    const stops = gsap.utils.toArray("#stops .stop");
 
     const colors = {
     path02a: "#e63946",
@@ -70,6 +144,31 @@ window.addEventListener("DOMContentLoaded", () => {
       // Update text
       titleEl.textContent = content[pathId].title;
       subtitleEl.textContent = content[pathId].subtitle;
+      listEl.innerHTML = "";
+
+      
+      content[pathId].list.forEach((item) => {
+  // Create main LI
+  const li = document.createElement("li");
+  li.textContent = item.main;
+
+  // Create inner UL
+  const innerUl = document.createElement("ul");
+  innerUl.className = "list-disc ml-6 mt-2 space-y-1 text-neutral-600";
+
+  // Add bullet items
+  item.bullets.forEach((b) => {
+    const innerLi = document.createElement("li");
+    innerLi.textContent = b;
+    innerUl.appendChild(innerLi);
+  });
+
+  // Add inner UL to LI
+  li.appendChild(innerUl);
+
+  // Append LI to main UL
+  listEl.appendChild(li);
+});
 
       // Reset paths
       gsap.set(
