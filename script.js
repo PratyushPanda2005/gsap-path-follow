@@ -1,6 +1,5 @@
 gsap.registerPlugin(ScrollToPlugin, MotionPathPlugin, DrawSVGPlugin);
 
-
 // const content = {
 //   path02a: {
 //     title: "Panel 1 – The Big Idea",
@@ -64,7 +63,6 @@ gsap.registerPlugin(ScrollToPlugin, MotionPathPlugin, DrawSVGPlugin);
 //   },
 // };
 
-
 const content = {
   path02a: {
     title: "Panel 1 – The Big Idea",
@@ -72,17 +70,17 @@ const content = {
     list: [
       {
         main: "Most B2B companies still sell with email, spreadsheets, and portals that feel like they’re stuck in 2005. eComchain turns your ERP-powered business into a modern B2B2C commerce experience – where manufacturers, distributors, and end consumers all connect on a single, cloud-based storefront.",
-        bullets: []
+        bullets: [],
       },
       {
         main: "Instead of stitching together custom code, you launch on a SaaS platform that already knows how B2B works: complex pricing, contracts, approvals, credit limits, purchase orders, and account-based ordering – all out of the box.",
-        bullets: []
+        bullets: [],
       },
       {
         main: "“From first login to first order, eComchain is built around how real industrial buyers actually buy.”",
-        bullets: []
-      }
-    ]
+        bullets: [],
+      },
+    ],
   },
   path02b: {
     title: "Panel 2 – The eComchain Approach",
@@ -90,7 +88,7 @@ const content = {
     list: [
       {
         main: "eComchain doesn’t ask you to rip and replace. It leverages your existing ERP investment and wraps it with a modern, AI-assisted commerce layer. The platform is designed to integrate with major ERPs such as Oracle, SAP, JD Edwards, Microsoft Dynamics and others, so product, pricing, inventory and orders stay in sync. (eComchain)",
-        bullets: []
+        bullets: [],
       },
       {
         main: "On top of those business processes, eComchain adds:",
@@ -98,23 +96,116 @@ const content = {
           "Account-based storefronts for each customer or distributor",
           "Contract & volume pricing that flow directly from your ERP",
           "Purchase order & punchout support for procurement teams",
-          "Multi-vendor marketplace options, so you can onboard suppliers and expand your catalog without new custom builds (eComchain)"
-        ]
+          "Multi-vendor marketplace options, so you can onboard suppliers and expand your catalog without new custom builds (eComchain)",
+        ],
       },
-    ]
+    ],
+  },
+  path02c: {
+    title: "Panel 2 – The eComchain Approach",
+    subtitle: "A B2B2C platform layered on top of your ERP",
+    list: [
+      {
+        main: "eComchain doesn’t ask you to rip and replace. It leverages your existing ERP investment and wraps it with a modern, AI-assisted commerce layer. The platform is designed to integrate with major ERPs such as Oracle, SAP, JD Edwards, Microsoft Dynamics and others, so product, pricing, inventory and orders stay in sync. (eComchain)",
+        bullets: [],
+      },
+      {
+        main: "On top of those business processes, eComchain adds:",
+        bullets: [
+          "Account-based storefronts for each customer or distributor",
+          "Contract & volume pricing that flow directly from your ERP",
+          "Purchase order & punchout support for procurement teams",
+          "Multi-vendor marketplace options, so you can onboard suppliers and expand your catalog without new custom builds (eComchain)",
+        ],
+      },
+    ],
+  },
+  path02d: {
+    title: "Panel 2 – The eComchain Approach",
+    subtitle: "A B2B2C platform layered on top of your ERP",
+    list: [
+      {
+        main: "eComchain doesn’t ask you to rip and replace. It leverages your existing ERP investment and wraps it with a modern, AI-assisted commerce layer. The platform is designed to integrate with major ERPs such as Oracle, SAP, JD Edwards, Microsoft Dynamics and others, so product, pricing, inventory and orders stay in sync. (eComchain)",
+        bullets: [],
+      },
+      {
+        main: "On top of those business processes, eComchain adds:",
+        bullets: [
+          "Account-based storefronts for each customer or distributor",
+          "Contract & volume pricing that flow directly from your ERP",
+          "Purchase order & punchout support for procurement teams",
+          "Multi-vendor marketplace options, so you can onboard suppliers and expand your catalog without new custom builds (eComchain)",
+        ],
+      },
+    ],
+  },
+  path02e: {
+    title: "Panel 2 – The eComchain Approach",
+    subtitle: "A B2B2C platform layered on top of your ERP",
+    list: [
+      {
+        main: "eComchain doesn’t ask you to rip and replace. It leverages your existing ERP investment and wraps it with a modern, AI-assisted commerce layer. The platform is designed to integrate with major ERPs such as Oracle, SAP, JD Edwards, Microsoft Dynamics and others, so product, pricing, inventory and orders stay in sync. (eComchain)",
+        bullets: [],
+      },
+      {
+        main: "On top of those business processes, eComchain adds:",
+        bullets: [
+          "Account-based storefronts for each customer or distributor",
+          "Contract & volume pricing that flow directly from your ERP",
+          "Purchase order & punchout support for procurement teams",
+          "Multi-vendor marketplace options, so you can onboard suppliers and expand your catalog without new custom builds (eComchain)",
+        ],
+      },
+    ],
+  },
+  path02f: {
+    title: "Panel 2 – The eComchain Approach",
+    subtitle: "A B2B2C platform layered on top of your ERP",
+    list: [
+      {
+        main: "eComchain doesn’t ask you to rip and replace. It leverages your existing ERP investment and wraps it with a modern, AI-assisted commerce layer. The platform is designed to integrate with major ERPs such as Oracle, SAP, JD Edwards, Microsoft Dynamics and others, so product, pricing, inventory and orders stay in sync. (eComchain)",
+        bullets: [],
+      },
+      {
+        main: "On top of those business processes, eComchain adds:",
+        bullets: [
+          "Account-based storefronts for each customer or distributor",
+          "Contract & volume pricing that flow directly from your ERP",
+          "Purchase order & punchout support for procurement teams",
+          "Multi-vendor marketplace options, so you can onboard suppliers and expand your catalog without new custom builds (eComchain)",
+        ],
+      },
+    ],
+  },
+  path02g: {
+    title: "Panel 2 – The eComchain Approach",
+    subtitle: "A B2B2C platform layered on top of your ERP",
+    list: [
+      {
+        main: "eComchain doesn’t ask you to rip and replace. It leverages your existing ERP investment and wraps it with a modern, AI-assisted commerce layer. The platform is designed to integrate with major ERPs such as Oracle, SAP, JD Edwards, Microsoft Dynamics and others, so product, pricing, inventory and orders stay in sync. (eComchain)",
+        bullets: [],
+      },
+      {
+        main: "On top of those business processes, eComchain adds:",
+        bullets: [
+          "Account-based storefronts for each customer or distributor",
+          "Contract & volume pricing that flow directly from your ERP",
+          "Purchase order & punchout support for procurement teams",
+          "Multi-vendor marketplace options, so you can onboard suppliers and expand your catalog without new custom builds (eComchain)",
+        ],
+      },
+    ],
   },
 };
-
 
 const titleEl = document.getElementById("dynamic-title");
 const subtitleEl = document.getElementById("dynamic-subtitle");
 const listEl = document.getElementById("dynamic-list");
 
-
 window.addEventListener("DOMContentLoaded", () => {
-    const stops = gsap.utils.toArray("#stops .stop");
+  const stops = gsap.utils.toArray("#stops .stop");
 
-    const colors = {
+  const colors = {
     path02a: "#e63946",
     path02b: "#1d3557",
     path02c: "#2a9d8f",
@@ -124,7 +215,6 @@ window.addEventListener("DOMContentLoaded", () => {
     path02g: "#6a994e",
   };
 
- 
   Object.keys(colors).forEach((id) => {
     gsap.set(`#${id}`, {
       drawSVG: "100%",
@@ -132,8 +222,7 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-
-   stops.forEach((stop) => {
+  stops.forEach((stop) => {
     stop.addEventListener("click", () => {
       const pathId = stop.dataset.path;
       const selectedColor = colors[pathId];
@@ -146,29 +235,28 @@ window.addEventListener("DOMContentLoaded", () => {
       subtitleEl.textContent = content[pathId].subtitle;
       listEl.innerHTML = "";
 
-      
       content[pathId].list.forEach((item) => {
-  // Create main LI
-  const li = document.createElement("li");
-  li.textContent = item.main;
+        // Create main LI
+        const li = document.createElement("li");
+        li.textContent = item.main;
 
-  // Create inner UL
-  const innerUl = document.createElement("ul");
-  innerUl.className = "list-disc ml-6 mt-2 space-y-1 text-neutral-600";
+        // Create inner UL
+        const innerUl = document.createElement("ul");
+        innerUl.className = "list-disc ml-6 mt-2 space-y-1 text-neutral-600";
 
-  // Add bullet items
-  item.bullets.forEach((b) => {
-    const innerLi = document.createElement("li");
-    innerLi.textContent = b;
-    innerUl.appendChild(innerLi);
-  });
+        // Add bullet items
+        item.bullets.forEach((b) => {
+          const innerLi = document.createElement("li");
+          innerLi.textContent = b;
+          innerUl.appendChild(innerLi);
+        });
 
-  // Add inner UL to LI
-  li.appendChild(innerUl);
+        // Add inner UL to LI
+        li.appendChild(innerUl);
 
-  // Append LI to main UL
-  listEl.appendChild(li);
-});
+        // Append LI to main UL
+        listEl.appendChild(li);
+      });
 
       // Reset paths
       gsap.set(
@@ -238,9 +326,7 @@ window.addEventListener("DOMContentLoaded", () => {
       applyMap7Disables();
     });
   });
-
-})
-
+});
 
 let firstClick = false;
 const extraDistance = 200;
