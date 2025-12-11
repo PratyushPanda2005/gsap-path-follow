@@ -4,273 +4,234 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Route Selector</title>
-
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/MotionPathPlugin.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/DrawSVGPlugin.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+    <style>
+      /* Custom styles for the moving image */
+      #moving-image {
+        position: absolute;
+        z-index: 20;
+        pointer-events: none;
+        will-change: transform;
+      }
+      
+      /* Hide scrollbars during animation */
+      .no-scroll {
+        overflow: hidden;
+      }
+    </style>
   </head>
 
   <body class="bg-white flex flex-col items-center">
-    <main class="flex flex-col items-center font-serif w-full">
-      <img src="/hero-img.jpg" class="object-cover w-full h-[60vh]" />
-
-      <div class="max-w-3xl mt-16">
-        <h1 class="text-4xl font-serif">
-          Rerouting the US: Reimagining a country for high-speed trains
-        </h1>
-        <h2 class="mt-8 text-center text-neutral-500">
-          By Eleanor Stubbs, Alex Leeds Matthews, Curt Merrill, Agne Jurkenaite
-          and Alexandra Skores, CNN Published November 22, 2025
-        </h2>
-      </div>
+    <main class="flex flex-col items-center font-serif w-full p-4">
+      <img
+      src="/eComchain-Logo.svg"
+      class="h-8 mb-4"
+      />
+      <img
+        src="/bg-img.jpg"
+        class="object-cover w-full h-[60vh] rounded-3xl"
+      />
     </main>
 
-    <div class="relative w-[900px] h-[120vh]">
+    <div class="relative w-[240px] xl:w-[1200px] mx-auto h-[1200px] xl:h-[800px]" id="map-container">
       <svg
         id="map"
-        width="900"
-        height="120vh"
-        class="overflow-visible absolute top-0 left-0"
+        class="overflow-visible absolute top-0 left-0 xl:w-[1200px] xl:h-[800px] w-[240px] "
       >
-        <path
-          id="path02a"
-          d="
-  M60 80
-  L60 250
-  Q60 260 70 260
-  L300 260
-  Q310 260 310 270
-  L310 500
-  Q310 510 320 510
-  L450 510
-  Q460 510 460 520
-  L460 750
-"
-          fill="none"
-          stroke-width="2"
-          stroke="black"
-        />
+        <!-- Path 02a - Updated to end at x=600 -->
+          <path
+        id="path02a"
+        d="
+          M140 120
+          L140 170
+          Q140 185 160 200
+          L620 400
+          L620 550  
+          L620 600  
+          L580 600  
+          L580 750  
+        "
+        fill="none"
+        stroke="#e63946"
+        stroke-width="2"
+        class="max-xl:hidden"
+      />
 
+         <path
+        id="path02a"
+        d="
+          M120 120
+          L120 1000
+        "
+        fill="none"
+        stroke="#e63946"
+        stroke-width="2"
+        class="xl:hidden"
+      />
+        
+        <!-- Path 02b - Updated to end at x=600 -->
         <path
           id="path02b"
           d="
-  M200 80
-  L200 300
-  Q200 310 210 310
-  L350 310
-  Q360 310 360 320
-  L360 550
-  Q360 560 370 560
-  L450 560
-  Q460 560 460 570
-  L460 750
-"
+            M360 120
+            L330 160       
+            L330 310       
+            L390 310       
+            L390 560        
+            L600 560      
+            L600 750       
+          "
           fill="none"
           stroke-width="2"
+          stroke="#1d3557"
         />
-
+        
+        <!-- Path 02c - Updated to end at x=600 -->
         <path
           id="path02c"
           d="
-  M360 80
-  L360 220
-  Q360 230 350 230
-  L250 230
-  Q240 230 240 240
-  L240 500
-  Q240 510 250 510
-  L450 510
-  Q460 510 460 520
-  L460 750
-"
+            M560 120
+            L560 280
+            L280 365
+            Q260 370 260 390
+            L260 500
+            Q260 540 300 540
+            L600 540
+            L600 750
+          "
           fill="none"
+          stroke="#2a9d8f"
           stroke-width="2"
         />
-
+        
+        <!-- Path 02d - Updated to end at x=600 -->
         <path
           id="path02d"
           d="
-  M500 80
-  L500 260
-  Q500 270 510 270
-  L500 270
-  Q510 270 510 280
-  L510 520
-  Q510 530 500 530
-  L450 530
-  Q440 530 440 540
-  L440 750
-"
+            M760 120
+            L760 160
+            Q760 185 740 205
+            L520 415
+            Q500 435 480 435
+            L600 435
+            L600 750
+          "
           fill="none"
+          stroke="#1b5e20"
           stroke-width="2"
         />
-
+        
+        <!-- Path 02e - Updated to end at x=600 -->
         <path
           id="path02e"
           d="
-  M620 80
-  L620 240
-  Q620 250 610 250
-  L420 250
-  Q410 250 410 260
-  L410 520
-  Q410 530 420 530
-  L450 530
-  Q460 530 460 540
-  L460 750
-"
+            M960 120
+            L920 160
+            L920 300
+            L660 300
+            L660 500
+            L600 500
+            L600 750
+          "
           fill="none"
           stroke-width="2"
+          stroke="#6a4c93"
         />
-
-        <path
-          id="path02f"
-          d="
-  M740 80
-  L740 300
-  Q740 310 730 310
-  L450 310
-  Q440 310 440 320
-  L440 600
-  Q440 610 450 610
-  L450 750
-"
-          fill="none"
-          stroke-width="2"
-        />
-
-        <path
-          id="path02g"
-          d="
-  M860 80
-  L860 260
-  Q860 270 850 270
-  L550 270
-  Q540 270 540 280
-  L540 600
-  Q540 610 530 610
-  L450 610
-  Q440 610 440 620
-  L440 750
-"
-          fill="none"
-          stroke-width="2"
-        />
-
-        <g id="point" class="invisible">
-          <image
-            href="/icon-train.png"
-            width="50"
-            height="50"
-            x="-20"
-            y="-20"
-          />
-        </g>
       </svg>
 
       <div id="stops" class="absolute top-0 left-0">
+        <!-- Stop 1 -->
         <div
-          class="stop absolute px-3 py-2 rounded-xl font-semibold cursor-pointer hover:scale-105 transition-transform"
+          class="stop absolute top-[40px] left-[40px] xl:left-[80px] xl:top-[40px] px-3 py-2 rounded-xl font-medium text-sm flex justify-center items-start cursor-pointer hover:scale-105 transition-transform"
           data-path="path02a"
           style="
-            left: 0px;
-            top: 40px;
-            border: 2px solid #e63946;
-            color: #e63946;
-            background: white;
-            min-width: 120px;
+            background-color:#e63946;
+            color: #ffffff;
+            min-width: 160px;
+            min-height: 80px;
           "
         >
           The Big Idea
+          <img
+            src="/logo.svg"  
+            class="stop-img absolute h-[50px] w-[50px] bottom-0 translate-y-[50%] left-1/2 -translate-x-1/2 xl:-translate-x-[90%]"
+          />
         </div>
 
+        <!-- Stop 2 -->
         <div
-          class="stop absolute px-3 py-2 rounded-xl font-semibold cursor-pointer hover:scale-105 transition-transform"
+          class="stop absolute top-[200px] left-[40px] xl:left-[280px] xl:top-[40px] px-3 py-2 rounded-xl font-medium text-sm flex justify-center items-start cursor-pointer hover:scale-105 transition-transform text-center"
           data-path="path02b"
           style="
-            left: 120px;
-            top: 40px;
-            border: 2px solid #1d3557;
-            color: #1d3557;
-            background: white;
+            color: #ffffff;
+            background: #1d3557;
             min-width: 160px;
+            min-height: 80px;
           "
         >
           The eComchain Approach
+          <img
+            src="/logo.svg" 
+            class="stop-img absolute h-[50px] w-[50px] bottom-0 translate-y-[50%] left-1/2 -translate-x-1/2"
+          />
         </div>
 
+        <!-- Stop 3 -->
         <div
-          class="stop absolute px-3 py-2 rounded-xl font-semibold cursor-pointer hover:scale-105 transition-transform"
+          class="stop absolute top-[360px] left-[40px] xl:left-[480px] xl:top-[40px] px-3 py-2 rounded-xl font-medium text-sm flex justify-center items-start cursor-pointer hover:scale-105 transition-transform text-center"
           data-path="path02c"
           style="
-            left: 280px;
-            top: 40px;
-            border: 2px solid #2a9d8f;
-            color: #2a9d8f;
-            background: white;
+            color: white;
+            background: #2a9d8f;
             min-width: 160px;
+            min-height: 80px;
           "
         >
-          Built for Speed and Scale
+          Intelligent<br/> Commerce
+          <img
+            src="/logo.svg"  
+            class="stop-img absolute h-[50px] w-[50px] bottom-0 translate-y-[50%] left-1/2 -translate-x-1/2"
+          />
         </div>
 
+        <!-- Stop 4 -->
         <div
-          class="stop absolute px-3 py-2 rounded-xl font-semibold cursor-pointer hover:scale-105 transition-transform"
+          class="stop absolute top-[520px] left-[40px] xl:left-[680px] xl:top-[40px] px-3 py-2 rounded-xl font-medium text-sm flex justify-center items-start cursor-pointer hover:scale-105 transition-transform text-center"
           data-path="path02d"
           style="
-            left: 440px;
-            top: 40px;
-            border: 2px solid #f4a261;
-            color: #f4a261;
-            background: white;
+            color: white;
+            background: #1b5e20;
+            min-width: 160px;
+            min-height: 80px;
           "
         >
-          Intelligent Commerce
+          Built for <br/> Speed and Scale
+          <img
+            src="/logo.svg"  
+            class="stop-img absolute h-[50px] w-[50px] bottom-0 translate-y-[50%] left-1/2 -translate-x-1/2"
+          />
         </div>
 
+        <!-- Stop 5 -->
         <div
-          class="stop absolute px-3 py-2 rounded-xl font-semibold cursor-pointer hover:scale-105 transition-transform"
+          class="stop absolute top-[680px] left-[40px] xl:left-[880px] xl:top-[40px] px-3 py-2 rounded-xl font-medium text-sm flex justify-center items-start cursor-pointer hover:scale-105 transition-transform text-center"
           data-path="path02e"
           style="
-            left: 560px;
-            top: 40px;
-            border: 2px solid #e76f51;
-            color: #e76f51;
-            background: white;
-            min-width: 120px;
+            color: white;
+            background: #6a4c93;
+            min-width: 160px;
+            min-height: 80px;
           "
         >
-          Industry Use Cases
-        </div>
-
-        <div
-          class="stop absolute px-3 py-2 rounded-xl font-semibold cursor-pointer hover:scale-105 transition-transform"
-          data-path="path02f"
-          style="
-            left: 680px;
-            top: 40px;
-            border: 2px solid #457b9d;
-            color: #457b9d;
-            background: white;
-          "
-        >
-          Measurable Impact
-        </div>
-
-        <div
-          class="stop absolute px-3 py-2 rounded-xl font-semibold cursor-pointer hover:scale-105 transition-transform"
-          data-path="path02g"
-          style="
-            left: 800px;
-            top: 40px;
-            border: 2px solid #6a994e;
-            color: #6a994e;
-            background: white;
-          "
-        >
-          Why It’s Different
+          Industry <br/> Use Cases
+          <img
+            src="/logo.svg"  
+            class="stop-img absolute h-[50px] w-[50px] bottom-0 translate-y-[50%] left-1/2 -translate-x-1/2"
+          />
         </div>
       </div>
     </div>
@@ -288,6 +249,6 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/DrawSVGPlugin.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/MotionPathPlugin.min.js"></script>
-    <script src="script.js"></script>
+    <script src="/script.js"></script>
   </body>
 </html>
