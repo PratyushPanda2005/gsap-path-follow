@@ -15,14 +15,24 @@ const content = {
         main: "Instead of stitching together custom code, you launch on a SaaS platform that already knows how B2B works.",
         bullets: [],
       },
+      {
+        main: "“From first login to first order, eComchain is built around how real industrial buyers actually buy.”",
+        bullets: [],
+      },
     ],
+    heading: "Empowering B2B Commerce with eComchain",
+    paragraph1:
+      "eComchain is a leading provider of B2B eCommerce solutions, empowering manufacturers and distributors to create seamless online buying experiences.",
+    paragraph2:
+      "With a focus on scalability, customization, and integration, eComchain helps businesses streamline their sales processes.",
+    image: "https://images.unsplash.com/photo-1761914850175-7e99abaad722",
   },
   path02b: {
     title: "Panel 2 – The eComchain Approach",
     subtitle: "A B2B2C platform layered on top of your ERP",
     list: [
       {
-        main: "eComchain doesn't ask you to rip and replace. It leverages your existing ERP investment.",
+        main: "eComchain doesn’t ask you to rip and replace. It leverages your existing ERP investment and wraps it with a modern, AI-assisted commerce layer. The platform is designed to integrate with major ERPs such as Oracle, SAP, JD Edwards, Microsoft Dynamics and others, so product, pricing, inventory and orders stay in sync. ",
         bullets: [],
       },
       {
@@ -30,64 +40,91 @@ const content = {
         bullets: [
           "Account-based storefronts for each customer or distributor",
           "Contract & volume pricing that flow directly from your ERP",
+          "Purchase order & punchout support for procurement teams",
+          "Multi-vendor marketplace options, so you can onboard suppliers and expand your catalog without new custom builds (eComchain)",
         ],
       },
     ],
+    heading: "Empowering B2B Commerce with eComchain",
+    paragraph1:
+      "eComchain is a leading provider of B2B eCommerce solutions, empowering manufacturers and distributors to create seamless online buying experiences.",
+    paragraph2:
+      "With a focus on scalability, customization, and integration, eComchain helps businesses streamline their sales processes.",
+    image:
+      "https://images.unsplash.com/photo-1763897236977-1baa4a026a6d?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   path02c: {
-    title: "Panel 3 – Intelligent Commerce",
-    subtitle: "AI-powered commerce experiences",
+    title: "Panel 3 – Built for Speed and Scale",
+    subtitle: "From idea to live storefront in days, not months",
     list: [
       {
-        main: "Leverage AI to provide personalized product recommendations and intelligent search.",
+        main: "Using drag-and-drop site building tools and a gallery of industry-specific templates, eComchain lets your team stand up branded storefronts quickly—without heavy IT lift. Marketing teams can manage pages, catalogs, banners, promotions and content without submitting tickets or touching code. ",
         bullets: [],
       },
       {
-        main: "Features include:",
-        bullets: [
-          "AI-powered product recommendations",
-          "Natural language search",
-          "Predictive analytics",
-        ],
+        main: "Behind the scenes, a cloud-native AWS architecture keeps performance and security handled for you, with periodic feature updates so you’re always on the latest version of the platform. (eComchain)",
+        bullets: [],
       },
     ],
+    heading: "Empowering B2B Commerce with eComchain",
+    paragraph1:
+      "eComchain is a leading provider of B2B eCommerce solutions, empowering manufacturers and distributors to create seamless online buying experiences.",
+    paragraph2:
+      "With a focus on scalability, customization, and integration, eComchain helps businesses streamline their sales processes.",
+    image:
+      "https://images.unsplash.com/photo-1764621204527-dcbaf5ad81f5?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   path02d: {
-    title: "Panel 4 – Built for Speed and Scale",
-    subtitle: "Enterprise-grade performance with modern UX",
+    title: "Panel 4 – Intelligent Commerce",
+    subtitle: "AI-enhanced storefronts that learn from every click",
     list: [
       {
-        main: "Built to handle enterprise traffic spikes and complex B2B workflows.",
-        bullets: [],
-      },
-      {
-        main: "Key features include:",
+        main: "eComchain weaves AI into key touchpoints of the buyer journey:",
         bullets: [
-          "Scalable cloud architecture",
-          "Real-time inventory updates",
-          "Advanced search and filtering",
+          "Product discovery with intelligent search and visual product search for more accurate results",
+          "Recommendations & personalization tuned to your industry, previous purchases, and location",
+          "Live chat and chatbots so your buyers get answers in real time",
+          "In-built web analytics to track performance by customer, region, and product line (eComchain)",
         ],
       },
+      {
+        main: "These tools turn your storefront into a living channel that gets smarter with every order, quote, or abandoned cart.",
+        bullets: [],
+      },
     ],
+    heading: "Empowering B2B Commerce with eComchain",
+    paragraph1:
+      "eComchain is a leading provider of B2B eCommerce solutions, empowering manufacturers and distributors to create seamless online buying experiences.",
+    paragraph2:
+      "With a focus on scalability, customization, and integration, eComchain helps businesses streamline their sales processes.",
+    image:
+      "https://images.unsplash.com/photo-1764471243156-5709bb76c7c8?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   path02e: {
     title: "Panel 5 – Industry Use Cases",
-    subtitle: "Tailored solutions for various industries",
+    subtitle: "One platform. Many verticals.",
     list: [
       {
-        main: "Specific solutions for different industry verticals.",
-        bullets: [],
-      },
-      {
-        main: "Supported industries:",
+        main: "Manufacturers, distributors, and niche brands use eComchain to stand up tailored experiences such as:",
         bullets: [
-          "Manufacturing",
-          "Distribution",
-          "Wholesale",
-          "Industrial Supplies",
+          "Manufacturer B2B portals fully integrated with ERP, payments and accounting systems",
+          "Food & beverage ordering sites that put restaurants and retailers online in as little as 24 hours",
+          "Garage door and building products portals that connect installers, dealers and schedulers",
+          "Multi-product marketplaces for sectors like healthcare, aviation spares, consumer electronics and more (eComchain)",
         ],
       },
+      {
+        main: "Each vertical gets industry-specific workflows while staying on the same core SaaS platform.",
+        bullets: [],
+      },
     ],
+    heading: "Empowering B2B Commerce with eComchain",
+    paragraph1:
+      "eComchain is a leading provider of B2B eCommerce solutions, empowering manufacturers and distributors to create seamless online buying experiences.",
+    paragraph2:
+      "With a focus on scalability, customization, and integration, eComchain helps businesses streamline their sales processes.",
+    image:
+      "https://images.unsplash.com/photo-1764377975933-2ffbd913f3c2?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 };
 
@@ -210,10 +247,19 @@ function handleMapClick(stop) {
   const titleEl = document.getElementById(`dynamic-title-${mapNumber}`);
   const subtitleEl = document.getElementById(`dynamic-subtitle-${mapNumber}`);
   const listEl = document.getElementById(`dynamic-list-${mapNumber}`);
+  const imageEl = document.getElementById(`dynamic-image-${mapNumber}`);
+  const headingEl = document.getElementById(`dynamic-heading-${mapNumber}`);
+  const paragraphEl = document.getElementById(`dynamic-paragraph-${mapNumber}`);
+  const paragraph2El = document.getElementById(`dynamic-paragraph-2-${mapNumber}`);
 
+  
   titleEl.textContent = cfg.title;
   subtitleEl.textContent = cfg.subtitle;
   listEl.innerHTML = "";
+  imageEl.src = cfg.image;
+  headingEl.textContent = cfg.heading;
+  paragraphEl.textContent = cfg.paragraph1;
+  paragraph2El.textContent = cfg.paragraph2;
 
   cfg.list.forEach((item) => {
     const li = document.createElement("li");
