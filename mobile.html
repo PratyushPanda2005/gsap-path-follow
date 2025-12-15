@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Single Route Animation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/MotionPathPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/DrawSVGPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+    <style>
+        .moving-image {
+            position: absolute;
+            z-index: 20;
+            pointer-events: none;
+            will-change: transform;
+        }
+    </style>
+</head>
+<body class="bg-white flex flex-col items-center">
+    <main class="flex flex-col items-center font-serif w-full p-4">
+        <img src="/eComchain-Logo.svg" class="h-8 mb-4" />
+        <img src="/bg-img.jpg" class="object-cover w-full h-[60vh] rounded-3xl" />
+    </main>
+
+    <!-- First Map -->
+    <div class="relative w-[240px] xl:w-[1200px] mx-auto h-[800px]" id="map-container-1">
+        <svg class="overflow-visible absolute top-0 left-0 w-[240px] xl:w-[1200px] h-[800px]">
+            <path
+                id="path02a"
+                d="
+                    M120 120
+                    L120 240
+                    L0 240
+                    L0 560
+                    L240 560
+                    L240 640
+                    L120 640
+                    L120 800  
+                "
+                fill="none"
+                stroke="#e63946"
+                stroke-width="2"
+            />
+        </svg>
+
+        <div id="stops-1" class="absolute top-0 left-0">
+            <div
+                class="stop absolute left-[40px] top-[40px] px-3 py-2 rounded-xl font-medium text-sm flex justify-center items-start cursor-pointer hover:scale-105 transition-transform"
+                data-path="path02a"
+                style="
+                    color: #ffffff;
+                    background-color: #e63946;
+                    min-width: 160px;
+                    min-height: 80px;
+                "
+            >
+                The Big Idea
+                <img
+                    src="/logo.svg"  
+                    class="stop-img absolute h-[50px] w-[50px] bottom-0 translate-y-[50%] left-1/2 -translate-x-1/2"
+                />
+            </div>
+        </div>
+    </div>
+
+    <div class="max-w-3xl mt-12">
+        <h1 id="dynamic-title-1" class="text-4xl font-serif">
+            Click the block to show the content
+        </h1>
+        <h2 id="dynamic-subtitle-1" class="text-2xl font-serif mt-6"></h2>
+        <ul id="dynamic-list-1" class="mt-6 space-y-3 text-neutral-600 text-lg"></ul>
+    </div>
+
+    <!-- Second Map -->
+    <div class="relative w-[240px] xl:w-[1200px] mx-auto h-[800px]" id="map-container-2">
+        <svg class="overflow-visible absolute top-0 left-0 w-[240px] xl:w-[1200px] h-[800px]">
+            <path
+                id="path02b"
+                d="
+                    M120 120
+                    L120 240
+                    L0 240
+                    L0 560
+                    L240 560
+                    L240 640
+                    L120 640
+                    L120 800  
+                "
+                fill="none"
+                stroke="#1d3557"
+                stroke-width="2"
+            />
+        </svg>
+
+        <div id="stops-2" class="absolute top-0 left-0">
+            <div
+                class="stop absolute left-[40px] top-[40px] px-3 py-2 rounded-xl font-medium text-sm flex justify-center items-start cursor-pointer hover:scale-105 transition-transform"
+                data-path="path02b"
+                style="
+                    color: #ffffff;
+                    background: #1d3557;
+                    min-width: 160px;
+                    min-height: 80px;
+                "
+            >
+                The eComchain Approach
+                <img
+                    src="/logo.svg"  
+                    class="stop-img absolute h-[50px] w-[50px] bottom-0 translate-y-[50%] left-1/2 -translate-x-1/2"
+                />
+            </div>
+        </div>
+    </div>
+
+    <div class="max-w-3xl mt-12">
+        <h1 id="dynamic-title-2" class="text-4xl font-serif">
+            Click the block to show the content
+        </h1>
+        <h2 id="dynamic-subtitle-2" class="text-2xl font-serif mt-6"></h2>
+        <ul id="dynamic-list-2" class="mt-6 space-y-3 text-neutral-600 text-lg"></ul>
+    </div>
+
+    <!-- Third Map -->
+    <div class="relative w-[240px] xl:w-[1200px] mx-auto h-[800px]" id="map-container-3">
+        <svg class="overflow-visible absolute top-0 left-0 w-[240px] xl:w-[1200px] h-[800px]">
+            <path
+                id="path02c"
+                d="
+                    M120 120
+                    L120 240
+                    L0 240
+                    L0 560
+                    L240 560
+                    L240 640
+                    L120 640
+                    L120 800  
+                "
+                fill="none"
+                stroke="#2a9d8f"
+                stroke-width="2"
+            />
+        </svg>
+
+        <div id="stops-3" class="absolute top-0 left-0">
+            <div
+                class="stop absolute left-[40px] top-[40px] px-3 py-2 rounded-xl font-medium text-sm flex justify-center items-start cursor-pointer hover:scale-105 transition-transform"
+                data-path="path02c"
+                style="
+                    color: #ffffff;
+                    background: #2a9d8f;
+                    min-width: 160px;
+                    min-height: 80px;
+                "
+            >
+                Intelligent Commerce
+                <img
+                    src="/logo.svg"  
+                    class="stop-img absolute h-[50px] w-[50px] bottom-0 translate-y-[50%] left-1/2 -translate-x-1/2"
+                />
+            </div>
+        </div>
+    </div>
+
+    <div class="max-w-3xl mt-12">
+        <h1 id="dynamic-title-3" class="text-4xl font-serif">
+            Click the block to show the content
+        </h1>
+        <h2 id="dynamic-subtitle-3" class="text-2xl font-serif mt-6"></h2>
+        <ul id="dynamic-list-3" class="mt-6 space-y-3 text-neutral-600 text-lg"></ul>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/DrawSVGPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/MotionPathPlugin.min.js"></script>
+    <script src="/script2.js">
+        // The JavaScript code above goes here
+    </script>
+</body>
+</html>
